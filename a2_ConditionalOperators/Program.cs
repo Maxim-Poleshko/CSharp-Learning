@@ -4,11 +4,12 @@ namespace a2_conditionalOperators
 {
     class conditionals
     {
-
         static void Main(string[] args)
         {
             verifyAgeIfElse();
             verifyMonthSwitch();
+            whileCounter();
+            loopUntillStopMessage();
         }
 
         static void verifyAgeIfElse()
@@ -19,10 +20,11 @@ namespace a2_conditionalOperators
             Console.Write("How old are you: ");
             age = Convert.ToInt32(Console.ReadLine());
 
-            if(age >= 18)
+            if (age >= 18)
             {
                 Console.WriteLine("Allowed");
-            } else if(age < 18)
+            }
+            else if (age < 18)
             {
                 Console.WriteLine("Rejected");
             }
@@ -74,9 +76,43 @@ namespace a2_conditionalOperators
             }
         }
 
-        static void passChecker()
+        static void whileCounter()
         {
-            //
+            // Задача:
+            // При помощи циклов вы можете повторять один и тот же код множество раз.
+            //Напишите простейшую программу которая выводит заданное пользователем сообщение заданное пользователем количество раз.
+
+            int attempts;
+            string message;
+
+            Console.Write("Put description here: ");
+            message = Console.ReadLine();
+            Console.Write("How many reminders do you need: ");
+            attempts = Convert.ToInt32(Console.ReadLine());
+
+            while (attempts > 0)
+            {
+                Console.WriteLine(message);
+                attempts--;
+            }
         }
+
+        static void loopUntillStopMessage()
+        {
+            //Задача:
+            //Написать программу, которая будет выполняться до тех пор, пока не будет введено слово exit.
+            //Помните, в цикле должно быть условие, которое отвечает за то, когда цикл должен завершиться.
+            //Это нужно чтобы любой разработчик взглянув на ваш код понял четкие границы вашего цикла.
+
+            string exitWord = "exit";
+            string userInput = "";
+
+            while (exitWord != userInput)
+            {
+                Console.Write("Set 'exit' command to quit: ");
+                userInput = Console.ReadLine();
+            }
+        }
+
     }
 }

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+<<<<<<< Updated upstream
+    <TargetFramework>net7.0</TargetFramework>
+=======
+    <TargetFramework>net6.0</TargetFramework>
+>>>>>>> Stashed changes
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+<<<<<<< Updated upstream
+</Project>
+=======
+</Project>
+>>>>>>> Stashed changes

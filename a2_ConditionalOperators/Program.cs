@@ -6,11 +6,17 @@ namespace a2_conditionalOperators
     {
         static void Main(string[] args)
         {
-            verifyAgeIfElse();
-            verifyMonthSwitch();
-            whileCounter();
-            loopUntillStopMessage();
-            currencyConverter();
+            //verifyAgeIfElse();
+            //verifyMonthSwitch();
+            //whileCounter();
+            //loopUntillStopMessage();
+            //currencyConverter();
+            ConsoleProgramForChangingProfileInformetion();  // ref out should be re-wrote
+            //Febonachi();
+            //NameWithFrame();
+            //PasswordChecker();
+            //RandomGuess();
+
         }
 
         static void verifyAgeIfElse()
@@ -360,6 +366,228 @@ namespace a2_conditionalOperators
                             + ballanceEUR
                     );
                     programmRunning = 200;
+                }
+            }
+        }
+
+        static void ConsoleProgramForChangingProfileInformetion()
+        {
+            string NameField = null;
+            string AddressField = null;
+            string PasswordField = null;
+            string DescriptionField = null;
+            string BithdayField = null;
+            string Exit = "";
+
+            int WhatOperationIsTaking;
+
+            string VariableWillBeChanged = "";
+            string WhichFieldIsChanging;
+
+
+            while (Exit != "Exit")
+            {
+                Console.WriteLine("Input 1 to set Name ");
+                Console.WriteLine("Input 2 to set Address ");
+                Console.WriteLine("Input 3 to set Password ");
+                Console.WriteLine("Input 4 to set Description ");
+                Console.WriteLine("Input 5 to set Birth Day ");
+                Console.WriteLine("Input 'Exit' to quit");
+                WhichFieldIsChanging = Console.ReadLine();
+
+                switch (WhichFieldIsChanging)
+                {
+                    case "1":
+                        int ProgrammRunning = 0;
+                        while (ProgrammRunning != 1)
+                        {
+                            Console.WriteLine("Set 1 to Set");
+                            Console.WriteLine("Set 2 to Reset");
+                            WhatOperationIsTaking = Convert.ToInt32(Console.ReadLine());
+                            if (WhatOperationIsTaking == 1)
+                            {
+                                Console.Write("Set new data: ");
+                                VariableWillBeChanged = Console.ReadLine();
+                                Console.Write("Do you want to 'Save' or get 'Back': ");
+                                string SaveOrBack = Console.ReadLine();
+                                if (SaveOrBack == "Save")
+                                {
+                                    if (NameField == VariableWillBeChanged)
+                                    {
+                                        Console.WriteLine("Set unigue data");
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        NameField = VariableWillBeChanged;
+                                        ProgrammRunning = 1;
+                                        break;
+                                    }
+                                }
+                                else if (SaveOrBack == "Back")
+                                {
+                                    ProgrammRunning = 1;
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Something went wrong");
+                                    ProgrammRunning = 0;
+                                    break;
+                                }
+
+                            }
+                            else if (WhatOperationIsTaking == 2)
+                            {
+                                Console.Write("Do you want to 'Reset' or get 'Back': ");
+                                string SaveOrBack = Console.ReadLine();
+                                if (SaveOrBack == "Reset")
+                                {
+                                    NameField = null;
+                                    ProgrammRunning = 1;
+                                    break;
+                                }
+                                else if (SaveOrBack == "Back")
+                                {
+                                    ProgrammRunning = 1;
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Something went wrong");
+                                    ProgrammRunning = 0;
+                                    break;
+                                }
+                            }
+                        }
+
+                        break;
+
+                    case "2":
+                        //MyMethod("AddressField", "Kharkiv");
+                        Console.WriteLine(AddressField);
+                        break;
+                    case "3":
+                        break;
+                    case "4":
+                        break;
+                    case "5":
+                        break;
+                    case "Exit":
+                        Exit = "Exit";
+                        Console.WriteLine("Program were stopped");
+                        Console.WriteLine("Name: " + NameField);
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input");
+                        break;
+                }
+            }
+        }
+
+        static void Febonachi()
+        {
+            //Нужно написать программу(используя циклы, обязательно пояснить выбор вашего цикла),
+            //чтобы она выводила следующую последовательность 7 14 21 28 35 42 49 56 63 70 77 84 91 98
+
+            int FeboSequence = 7;
+            for (int i = 0; i != 14; i++)
+            {
+                Console.WriteLine(FeboSequence);
+                FeboSequence += 7;
+            }
+        }
+
+        static void NameWithFrame()
+        {
+            string Name;
+            char CharName;
+            string NameLenghtChar = null;
+
+            Console.Write("What's your name: ");
+            Name = Console.ReadLine();
+            Console.Write("Set a char that are you inderested in: ");
+            CharName = Convert.ToChar(Console.ReadLine());
+
+
+            for (int i = 0; i < (Name.Length + 4); i++)
+            {
+                NameLenghtChar += CharName;
+            }
+            Console.WriteLine(NameLenghtChar + "\n" + CharName + " " + Name + " " + CharName + "\n" + NameLenghtChar);
+
+        }
+
+        static void PasswordChecker()
+        {
+            string Password = "Bandera";
+            int AllowsCounts = 3;
+            int UsedCounts = 0;
+            bool RunningApp = true;
+
+            while (RunningApp)
+            {
+                if (AllowsCounts > UsedCounts)
+                {
+                    Console.Write("You have " + (AllowsCounts - UsedCounts) + " attempts.\nSet password: ");
+                    string GuessPass = Console.ReadLine();
+                    if (GuessPass == Password)
+                    {
+                        Console.Clear();
+                        UsedCounts = 0;
+                        Console.WriteLine("Got access to the secret message\nAttempt count erased.");
+                        RunningApp = false;
+                    }
+                    else if (GuessPass != Password)
+                    {
+                        UsedCounts += 1;
+                        Console.WriteLine("Wrong password.");
+                        Console.Clear();
+                    }
+                }
+                else if (AllowsCounts <= UsedCounts)
+                {
+                    Console.WriteLine("You don't have more attempts.\nContact with a tecnical support.");
+                    RunningApp = false;
+                }
+            }
+        }
+
+        static void RandomGuess()
+        {
+            Random rand = new Random();
+            int GuessNumber;
+            int Attempts = 5;
+            bool RunningApp = true;
+
+            GuessNumber = rand.Next(10, 100);
+            int LessNumber = rand.Next(0, 10);
+            int MoreNumber = rand.Next(0, 10);
+            Console.Write("Guess number in the range between " + (GuessNumber - LessNumber) + " and " + (GuessNumber + MoreNumber));
+            while (RunningApp)
+            {
+                if (Attempts > 0)
+                {
+                    Console.WriteLine("\nYou have " + Attempts + " attempts to guess the number.");
+                    Console.Write("The number is: ");
+
+                    if (GuessNumber == Convert.ToInt32(Console.ReadLine()))
+                    {
+                        Console.WriteLine("You right, it was: " + GuessNumber);
+                        RunningApp = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You wrong. Try again!");
+                        Attempts -= 1;
+                    }
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.WriteLine("You have no attempts! Try again later.");
+                    RunningApp = false;
                 }
             }
         }

@@ -83,7 +83,11 @@ namespace a3_Arrays_Methods
             Console.WriteLine("\nNew array.");
             for (int i = 0; i < Array.GetLength(0); i++)
             {
+<<<<<<< Updated upstream
                 for (int j = 0;  j < Array.GetLength(1);  j++)
+=======
+                for (int j = 0; j < Array.GetLength(1); j++)
+>>>>>>> Stashed changes
                 {
                     if (Array[i, j] != MaxElement)
                     {
@@ -151,7 +155,7 @@ namespace a3_Arrays_Methods
             //Выход из программы должен происходить только в том случае, если пользователь введет команду exit.
             //Программа должна работать на основе расширения массива.
             //Внимание, нельзя использовать List<T> и Array.Resize
-            bool RunningApp = true;
+            bool RunningApp = false;
             int[] UserNumbers = new int[1];
 
             while (RunningApp)

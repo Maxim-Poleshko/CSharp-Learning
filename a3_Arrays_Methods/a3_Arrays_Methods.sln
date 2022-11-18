@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a3_Arrays_Methods", "a3_Arrays_Methods.csproj", "{CA0EC2B4-54C9-4CFD-8642-2D9355B5A8BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA0EC2B4-54C9-4CFD-8642-2D9355B5A8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0EC2B4-54C9-4CFD-8642-2D9355B5A8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0EC2B4-54C9-4CFD-8642-2D9355B5A8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA0EC2B4-54C9-4CFD-8642-2D9355B5A8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0052802E-816B-4FA9-AADC-C7168A2871F0}
+	EndGlobalSection
+EndGlobal

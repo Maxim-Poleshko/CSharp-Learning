@@ -83,11 +83,8 @@ namespace a3_Arrays_Methods
             Console.WriteLine("\nNew array.");
             for (int i = 0; i < Array.GetLength(0); i++)
             {
-<<<<<<< Updated upstream
-                for (int j = 0;  j < Array.GetLength(1);  j++)
-=======
+
                 for (int j = 0; j < Array.GetLength(1); j++)
->>>>>>> Stashed changes
                 {
                     if (Array[i, j] != MaxElement)
                     {
@@ -155,13 +152,34 @@ namespace a3_Arrays_Methods
             //Выход из программы должен происходить только в том случае, если пользователь введет команду exit.
             //Программа должна работать на основе расширения массива.
             //Внимание, нельзя использовать List<T> и Array.Resize
-            bool RunningApp = false;
+            bool RunningApp = true;
             int[] UserNumbers = new int[1];
 
             while (RunningApp)
             {
-                Console.Write("Set numbers Or input 'Sum' Or 'Exit: ");
-                //Console.WriteLine(Console.ReadLine().GetType().isint);
+                Console.Write("Set number to collect Or input 'Sum' Or 'Exit: ");
+
+                var Input = Console.ReadLine();
+
+                if (int.TryParse(Input, out int result))
+                {
+                    int[] TempArray = new int[UserNumbers.Length + 1];
+                    for (int i = 0; i < UserNumbers.Length; i++)
+                    {
+                        TempArray[i] = UserNumbers[i];
+                    }
+                    TempArray[TempArray.Length - 1] = result;
+                    UserNumbers = TempArray;
+
+                } else if (Input.ToLower() == "sum")
+                {
+                    
+                    Console.WriteLine("Calculated sum is " + UserNumbers.Sum());
+                } else if(Input.ToLower() == "exit")
+                {
+                    RunningApp = false;
+                    Console.WriteLine("Cycle ended. Calculated sum is " + UserNumbers.Sum() + ". See you later.");
+                }
 
             }
         }

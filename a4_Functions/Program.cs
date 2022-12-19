@@ -97,10 +97,10 @@ namespace a3_Arrays_Methods
                     tempJobTitles[i] = arrJobTitle[i];
 
                 }
-                tempNames[tempNames.Length - 1] = name;
+                tempNames[^1] = name;
                 arrNames = tempNames;
 
-                tempJobTitles[tempJobTitles.Length - 1] = employeeJobPosition;
+                tempJobTitles[^1] = employeeJobPosition;
                 arrJobTitle = tempJobTitles;
 
             }

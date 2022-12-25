@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a4_Functions", "a4_Function
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a4_Functions_2", "a4_Functions_2\a4_Functions_2.csproj", "{982A9D10-F83B-4C79-ABB1-B06E7384DEC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a5_ClassMethodStructInterface", "a5_ClassMethodStructInterface\a5_ClassMethodStructInterface.csproj", "{CF2A0E95-6AB2-4EF0-B125-D5C8DB85A45D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{982A9D10-F83B-4C79-ABB1-B06E7384DEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{982A9D10-F83B-4C79-ABB1-B06E7384DEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{982A9D10-F83B-4C79-ABB1-B06E7384DEC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF2A0E95-6AB2-4EF0-B125-D5C8DB85A45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF2A0E95-6AB2-4EF0-B125-D5C8DB85A45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF2A0E95-6AB2-4EF0-B125-D5C8DB85A45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF2A0E95-6AB2-4EF0-B125-D5C8DB85A45D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

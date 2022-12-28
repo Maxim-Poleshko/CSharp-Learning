@@ -1,0 +1,181 @@
+﻿static void UsersDB()
+{
+    bool appRunning = true;
+    int userInput;
+
+    //User[] users = { new User("Heavy", 450, 45), new User("Dandy", 310, 30), new User("Alonn", 200, 60) };
+    User[] users = new User[0];
+
+    int id = 0;
+
+    while (appRunning)
+    {
+        Console.WriteLine("Set '1' to add new user\nSet '2' to ban user\nSet '3' to unban user\nSet '4' to delete user\nSet '5' to exit");
+        Console.Write("Choose menu option: ");
+
+        switch (userInput = Convert.ToInt32(Console.ReadLine()))
+        {
+            case 1:
+                Console.Write("\nSet the username:");
+                string Username = Console.ReadLine();
+
+                Console.Write("Set your level:");
+                int level = Convert.ToInt32(Console.ReadLine());
+
+                if (users.Length == 0)
+                {
+                    Array.Resize(ref users, users.Length + 1);
+                    users[users.Length - 1] = new User(Username, id+1, level);
+                    id += 1;
+
+                }
+                else if (users.Length > 0)
+                {
+                    Array.Resize(ref users, users.Length + 1);
+                    users[users.Length - 1] = new User(Username, id + 1, level);
+                    id += 1;
+                }
+                break;
+
+            case 2:
+                int idForBan = 0;
+                if (users.Length > 0)
+                {
+                    Console.Clear();
+
+                    for (int i = 0; i < users.Length; i++)
+                    {
+                        users[i].ShowUserInfo();
+                    }
+
+                    Console.Write("Set the ID to ban user");
+                    idForBan = Convert.ToInt32(Console.ReadLine()); 
+
+                    for (int i = 0; i < users.Length; i++)
+                    {
+
+                        Console.WriteLine();
+                        if (users[i].Id == idForBan)
+                        {
+                            users[i].Banned = true;
+                        }
+                        else if (users.Length == i+1)
+                        {
+                            Console.WriteLine($"User with '{idForBan}' didn't find");
+                        }
+                    }
+
+                }
+                else if (users.Length == 0)
+                    Console.WriteLine("User db is empty");
+
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                int idForDeleteUser = 0;
+                if (users.Length > 0)
+                {
+                    Console.Clear();
+
+                    for (int i = 0; i < users.Length; i++)
+                    {
+                        users[i].ShowUserInfo();
+                    }
+
+                    Console.Write("Set the ID to delete user");
+                    idForBan = Convert.ToInt32(Console.ReadLine());
+
+                    for (int i = 0; i < users.Length; i++)
+                    {
+
+                        Console.WriteLine();
+                        if (users[i].Id == idForDeleteUser)
+                        {
+                                
+                        }
+                        else if (users.Length == i + 1)
+                        {
+                            Console.WriteLine($"User with '{idForDeleteUser}' didn't find");
+                        }
+                    }
+                }
+                else if (users.Length == 0)
+                    Console.WriteLine("User db is empty");
+
+                break;
+            case 5:
+                appRunning = false;
+                Console.WriteLine("App has been stopped.");
+                break;
+            default:
+                Console.WriteLine("Something went wrong!");
+                appRunning = false;
+                break;
+        }
+
+        Console.WriteLine("");
+
+        if (users.Length >= 0)
+        {
+            for (int i = 0; i < users.Length; i++)
+            {
+                users[i].ShowUserInfo();
+            }
+        }
+        else
+        {
+            Console.WriteLine("User db is empty");
+        }
+
+        Console.WriteLine("Press a button...");
+        Console.ReadLine();
+        Console.Clear();
+            
+
+    }
+
+
+}
+
+class User
+{
+    public string Name;
+    public int Id;
+    public int Level;
+    public bool Banned;
+
+    string bannedState;
+
+
+    public User(string name, int id, int level, bool banned = false)
+    {
+        Name = name;
+        Id = id;
+        Level = level;
+        Banned = banned;
+    } 
+
+
+    public void SetBanForUser()
+    {
+            
+    }
+
+    public void ShowUserInfo()
+    {
+        if (Banned)
+        {
+            string bannedState = "banned";
+        }
+        else
+        {
+            string bannedState = "not banned";
+        }
+
+        Console.WriteLine($"Id-{Id} Username: {Name} - Level {Level}, status banned is {Banned}");
+    }
+
+}
